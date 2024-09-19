@@ -1,6 +1,7 @@
 package edu.iesam.dam2024
 
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -13,7 +14,7 @@ class MainActivity : AppCompatActivity() {
 
     private var name: String = "Diego"
     private var name2: String? = null // le decimos que la variable puede ser nula con el ? en el tipo
-    private var name3: String = null // si no se lo marcamos (?) nos avisa de error
+    private var name3: String? = null // si no se lo marcamos (?) nos avisa de error
 
     // inicia los contructores
     // init {
