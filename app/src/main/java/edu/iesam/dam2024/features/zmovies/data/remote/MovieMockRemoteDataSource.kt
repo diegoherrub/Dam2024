@@ -1,6 +1,6 @@
-package edu.iesam.dam2024.features.movies.data.remote
+package edu.iesam.dam2024.features.zmovies.data.remote
 
-import edu.iesam.dam2024.features.movies.domain.Movie
+import edu.iesam.dam2024.features.zmovies.domain.Movie
 
 /**
  * Naming: Modelo * Tecnología + RemoteDataSource

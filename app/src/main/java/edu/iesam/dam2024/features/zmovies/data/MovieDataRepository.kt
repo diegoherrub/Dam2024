@@ -1,8 +1,8 @@
-package edu.iesam.dam2024.features.movies.data
+package edu.iesam.dam2024.features.zmovies.data
 
-import edu.iesam.dam2024.features.movies.data.remote.MovieMockRemoteDataSource
-import edu.iesam.dam2024.features.movies.domain.Movie
-import edu.iesam.dam2024.features.movies.domain.MovieRepository
+import edu.iesam.dam2024.features.zmovies.data.remote.MovieMockRemoteDataSource
+import edu.iesam.dam2024.features.zmovies.domain.Movie
+import edu.iesam.dam2024.features.zmovies.domain.MovieRepository
 
 /**
  * Naming: Modelo + DataRepository

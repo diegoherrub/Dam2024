@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".features.movies.presentation.MovieActivity"
+            android:name=".features.zmovies.presentation.MovieActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

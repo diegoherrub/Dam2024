@@ -1,13 +1,15 @@
-package edu.iesam.dam2024.features.movies.presentation
+package edu.iesam.dam2024.features.zmovies.presentation
 
 import android.os.Bundle
 import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import edu.iesam.dam2024.R
+import edu.iesam.dam2024.features.superheroes.presentation.SuperHeroFactory
 
 class MovieActivity : AppCompatActivity() {
 
     private val movieFactory : MovieFactory = MovieFactory()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,6 +17,7 @@ class MovieActivity : AppCompatActivity() {
         val viewModel = movieFactory.buildViewModel()
         val movies = viewModel.viewCreated()
         Log.d("@dev", movies.toString())
+
     }
 
     // cuando la vista es visible para el usuario pero todavía no puede interactuar
