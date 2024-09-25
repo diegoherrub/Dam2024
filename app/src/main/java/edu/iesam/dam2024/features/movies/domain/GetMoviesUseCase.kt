@@ -1,4 +1,4 @@
-package edu.iesam.dam2024.features.zmovies.domain
+package edu.iesam.dam2024.features.movies.domain
 
 /**
  * Naming: Verbo(Acción) + Use Case

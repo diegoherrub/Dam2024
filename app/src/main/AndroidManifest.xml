@@ -13,16 +13,7 @@
         android:theme="@style/Theme.Dam2024"
         tools:targetApi="31">
         <activity
-            android:name=".features.superheroes.presentation.SuperHeroActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".features.zmovies.presentation.MovieActivity"
+            android:name=".features.movies.presentation.MovieActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
