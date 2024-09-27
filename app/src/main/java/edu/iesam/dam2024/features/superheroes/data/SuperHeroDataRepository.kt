@@ -4,8 +4,15 @@ import edu.iesam.dam2024.features.superheroes.data.remote.SuperHeroMockRemoteDat
 import edu.iesam.dam2024.features.superheroes.domain.SuperHero
 import edu.iesam.dam2024.features.superheroes.domain.SuperHeroRepository
 
-class SuperHeroDataRepository (private val mockRemoteDataSource: SuperHeroMockRemoteDataSource): SuperHeroRepository {
+class SuperHeroDataRepository (
+    private val mockRemoteDataSource: SuperHeroMockRemoteDataSource
+): SuperHeroRepository {
+
     override fun getSuperHeroes(): List<SuperHero> {
         return  mockRemoteDataSource.getSuperHeroes()
+    }
+
+    override fun getSuperHero(superHeroId: String): SuperHero? {
+        return mockRemoteDataSource.getSuperHero(superHeroId)
     }
 }

@@ -6,6 +6,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import edu.iesam.dam2024.R
+import edu.iesam.dam2024.features.movies.data.local.MovieXmlLocalDataSource
 import edu.iesam.dam2024.features.movies.domain.Movie
 
 class MovieActivity : AppCompatActivity() {
@@ -19,6 +20,7 @@ class MovieActivity : AppCompatActivity() {
         val movies = viewModel.viewCreated()
         bindData(movies)
         viewModel.itemSelected(movies.first().id)
+        testXml()
     }
 
     private fun bindData(movies: List<Movie>) { //asignamos datos a elementos de la vista
@@ -62,4 +64,15 @@ class MovieActivity : AppCompatActivity() {
         Log.d("@dev", "onStop")
     }
 
+    private fun testXml() {
+        val xmlDataSource = MovieXmlLocalDataSource(this)
+        val movie = viewModel.itemSelected("1")
+        movie?.let {
+            xmlDataSource.save(it) //guarda en local la movie seleccionada del viewModel
+        }
+        val movieSaved = xmlDataSource.find()
+        Log.d("@dev", movieSaved.toString())
+
+        xmlDataSource.delete()
+    }
 }
