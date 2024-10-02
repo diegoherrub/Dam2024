@@ -6,6 +6,8 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import edu.iesam.dam2024.R
+import edu.iesam.dam2024.features.movies.data.local.MovieXmlLocalDataSource
+import edu.iesam.dam2024.features.superheroes.data.local.SuperHeroXmlLocalDataSource
 import edu.iesam.dam2024.features.superheroes.domain.SuperHero
 
 class SuperHeroActivity : AppCompatActivity() {
@@ -16,10 +18,10 @@ class SuperHeroActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_superhero)
-        val viewModel = superHeroFactory.buildViewModel()
         val superHeroes = viewModel.viewCreated()
-        bindData(superHeroes)
+        //bindData(superHeroes)
         viewModel.itemSelected(superHeroes.first().id)
+        testXml()
     }
 
     private fun bindData(superHeroes: List<SuperHero>) {
@@ -53,5 +55,17 @@ class SuperHeroActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         Log.d("@dev", "onStop")
+    }
+
+    private fun testXml() {
+        val xmlDataSource = SuperHeroXmlLocalDataSource(this)
+        val heroe = viewModel.itemSelected("1")
+        heroe?.let {
+            xmlDataSource.save(it)
+        }
+        val heroeSaved = xmlDataSource.find()
+        Log.d("@dev", heroeSaved.toString())
+
+        xmlDataSource.delete()
     }
 }
